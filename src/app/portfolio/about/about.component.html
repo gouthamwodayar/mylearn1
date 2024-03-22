@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+<div class="myTrips">
+    <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>Dubai</mat-card-title>
+          <mat-card-subtitle>Itiernary</mat-card-subtitle>
+        </mat-card-header>
+        <button (click)="isChecked()" class="button">click here to show Days</button>
+        <div *ngIf="showGrid">
+        <mat-card-content >
+          <p>This card indeterminates progress bar.</p>
+          <p>{{days}}</p>
+        </mat-card-content>
+    </div>
+        
+      </mat-card>
+
+<!-- hidden is used here it will show while its loaded then button click it will hide always use ngIF -->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>Singapore</mat-card-title>
+          <mat-card-subtitle>Itiernary</mat-card-subtitle>
+        </mat-card-header>
+        <button (click)="isChecked1()" class="button">click here to show Days</button>
+        <div [hidden]="showGrid1">
+        <mat-card-content >
+          <p>This card indeterminates progress bar.</p>
+          <p>{{days}}</p>
+        </mat-card-content>
+    </div>
+        
+      </mat-card>
+
+<div ><button (click)="isTrips()" class="button">click here to show Trips</button>
+    <div *ngIf="tripGrid">
+      <div class="trip-card" *ngFor="let trip of trips" >
+        <h5>{{trip.name}}:{{trip.days}}days</h5>
+        
+      </div>
+    </div>
+    </div>
+</div>
+
+
